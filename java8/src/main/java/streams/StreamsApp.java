@@ -51,8 +51,14 @@ public class StreamsApp {
 
     private void match() {
         printMessage("Matching...");
-        boolean r = list.stream().anyMatch(x -> x.equalsIgnoreCase("Dra"));
-        System.out.println("r = " + r);
+        boolean anyMatch = list.stream().anyMatch(x -> x.equalsIgnoreCase("Dra"));
+        System.out.println("anyMatch = " + anyMatch);
+
+        boolean allMatch = list.stream().allMatch(x -> x.equalsIgnoreCase("Dra"));
+        System.out.println("allMatch = " + allMatch);
+
+        boolean noneMatch = list.stream().noneMatch(x -> x.equalsIgnoreCase("Dra"));
+        System.out.println("noneMatch = " + noneMatch);
 
     }
 
