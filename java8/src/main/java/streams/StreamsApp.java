@@ -31,8 +31,8 @@ public class StreamsApp {
         list.stream()
                 .filter(x -> x.contains("e"))
                 .distinct()
-                .map(x -> x.toUpperCase())
-                .sorted((x, y) -> x.compareTo(y))
+                .map(String::toUpperCase)
+                .sorted(String::compareTo)
                 .skip(1)
                 .forEach(System.out::println);
     }
@@ -81,6 +81,7 @@ public class StreamsApp {
     private void count() {
         printMessage("Counting");
         System.out.println(list.stream().count());
+
     }
 
     private void limit() {
